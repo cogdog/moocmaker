@@ -9,14 +9,14 @@ by Alan Levine https://cog.dog or http://cogdogblog.com/
 ## About This Bovine Operation
 This is an HTML/Javascript rendition of a previously made [PHP version of a generator](http://mooc.cogdogblog.com/) for making crazy course names. 
 
-[![](moocing.jpg "Generator sample screen with san example mooc generated named Cultural Regards For Self-Actualizing Transportation Models: An Interdisciplinary Study (#crfstm21")](https://cogdog.github.io/moocmaker/)
+[![](moocing.jpg "Generator sample screen with san example mooc generated named Cultural Disregard For Self-Actualizing Transportation Models: An Interdisciplinary Study (#crfstm21")](https://cogdog.github.io/moocmaker/)
 
 [Just go try it](https://cogdog.github.io/moocmaker/)
 
 
 The structure draws from arrays for the parts, or from the example above
 
-* **Subject** ("Cultural Regards For")
+* **Subject** ("Cultural Disregard For")
 * **Adjective** ("Self-Actualizing")
 * **Topic** ("Transportation Models")
 * **After the Colon** ("An Interdisciplinary Study")
