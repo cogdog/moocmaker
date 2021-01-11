@@ -9,7 +9,7 @@ by Alan Levine https://cog.dog or http://cogdogblog.com/
 ## About This Bovine Operation
 This is an HTML/Javascript rendition of a previously made [PHP version of a generator](http://mooc.cogdogblog.com/) for making crazy course names. 
 
-[![](moocing.jpg "Generator sample screen with san example mooc generated named Cultural Disregard For Self-Actualizing Transportation Models: An Interdisciplinary Study (#crfstm21")](https://cogdog.github.io/moocmaker/)
+[![](moocing.jpg "Generator sample screen with an example mooc generated named Cultural Disregard For Self-Actualizing Transportation Models: An Interdisciplinary Study (#crfstm21")](https://cogdog.github.io/moocmaker/)
 
 [Just go try it](https://cogdog.github.io/moocmaker/)
 
@@ -27,4 +27,4 @@ More randomness comes into the different ways the text is presented, including r
 
 This was modeled a bit after the [EdTech Metaphor Generator](https://github.com/cogdog/edtechaphors), but this one has extra doses of randomness.
 
-If you want to join in and add some fertilizer, just make edits and submit as change requests to the feedlot.
+If you want to join in and add some fertilizer, just [make edits to the feedlot](https://github.com/cogdog/moocmaker/blob/main/feedlot.js) and submit as change requests to the feedlot.
