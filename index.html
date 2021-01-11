@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<style>
+	    .jumbotron  {
+	    	opacity: 0.8;
+	    	margin-bottom:3em;
+	    	min-height: 5em;
+	    }
+
+	    #footer {
+			position:absolute;
+			bottom:0;
+			left: 0;
+			color:#fff;
+			font-size: 0.8em;
+			line-height:1.1;
+		}	
+		
+		#footer a {
+			color:#fff;
+		}
+		
+		a.github-ribbon {
+			position: absolute;
+			top: 0;
+			left: 0;
+			border: 0;
+		}
+	
+	</style>
+	<script src="feedlot.js">
+	
+	</script>
+	<!-- make title your own -->
+    <title>Generate a MOOC</title>
+  </head>
+  <body>
+  <!-- where the action happens -->
+  <div class="jumbotron">
+  <h1 id="metaphorical" class="display-4 text-center">Make a MOOC</h1>
+  </div>
+	
+	<div id="main" class="container-fluid text-center">
+		<button type="button" class="btn btn-primary btn-lg" id="gimme">Gimme a MOOC</button>
+	</div><!-- #main -->
+	
+	
+	<div id="footer" class="container-fluid text-center">
+		<p>
+		<!-- background image attribution -->		
+		
+			<a href="https://flickr.com/photos/cogdog/8124136144">Massive Online Open Cows</a> flickr photo by <a href="https://flickr.com/people/cogdog">cogdogblog</a> shared under a <a href="https://creativecommons.org/licenses/by/2.0/">Creative Commons (BY) license</a><br />
+			<!-- code credit, thanks for keeping -->
+			code by <a href="http://cog.dog/"> @cogdog</a> made as a lighter weight animal than the <a href="http://mooc.cogdogblog.com/">original MOOC Maker</a> &bull; <a href="https://github.com/cogdog/moocmaker">available for forking</a> 
+		</p>
+	</div>
+	
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    
+    <script>
+	// backstrech the background image -->
+	 $.backstretch("background.jpg");
+	 
+	 
+
+	// return an index to a random element of array
+	function random(array) {
+	  return Math.floor(Math.random() * array.length)
+	}
+
+
+	function make_acronym(str) {
+		// creates a lower case acronym for a string of words
+
+		// make it an array
+		words = str.split(" ");
+	
+		// build string of first letters
+		acronym = '';
+		words.forEach(function(w) {
+			acronym+= w.charAt(0);
+		});
+
+		return (acronym.toLowerCase());
+	}
+
+	function get_year_short() {
+		// return a 2 digit year
+		// h/t https://stackoverflow.com/a/59101618/2418186
+		var strDate = new Date(); 
+		var shortYear = strDate.getFullYear(); 
+		return (shortYear.toString().substr(-2));
+	}
+
+	function makemooc() {
+		// Time to calf a MOOC cow
+	
+		// random parts of the name
+		var s = subject[random(subject)];
+		var a = adjectives[random(adjectives)];
+		var t = topics[random(topics)];
+		var c = postcolon[random(postcolon)];
+	
+		// gotta have a hashtag, use stuff on left of colon
+		var hashtag = '#' + make_acronym(s + ' ' + a + ' ' + t) + get_year_short();
+	
+		// here's yer calf!
+		return (s + ' ' + a + ' ' + t + ': ' + c + ' ' + hashtag);
+	}
+
+	// generate the stuff
+	function generate() {
+		// lifted somewhat from https://glitch.com/~spark-chipmunk
+
+	  // create different formats of outputting a birthed mooc
+	  let heifers = ['Fresh out of the MOOC Machine! "' + makemooc()+ '"', 
+					 'You cannot find this MOOC on ' + big_cows[random(big_cows)] + ': "' +  makemooc() + '"',
+					 'If anything does not prove that MOOCs are alive and well, it is "' + makemooc()+ '"',
+					 'Wait until ' + big_bloggers[random(big_bloggers)] + ' blogs about this MOOC: "' + makemooc() + '"'
+					]
+
+	 // update the display
+  	  $('#metaphorical').html(heifers[random(heifers)]);
+
+	}
+	
+	$(document).ready(function(){	
+		
+		$( "#gimme" ).click(function() {
+			// do it again
+			generate();
+			// change button name
+			$("#gimme").html(little_cows[random(little_cows)]);
+		});	
+			
+	});//ready
+
+	
+	</script>
+  </body>
+</html>
