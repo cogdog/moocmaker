@@ -20,11 +20,9 @@
 	    }
 
 	    #footer {
-
 			position:absolute;
 			bottom:0;
 			left: 0;
-
 			color:#fff;
 			font-size: 0.8em;
 			line-height:1.1;
@@ -118,6 +116,13 @@
 		// here's yer calf!
 		return (s + ' ' + a + ' ' + t + ': ' + c + ' ' + hashtag);
 	}
+	
+	function tweet_for_stephen( newmooc ) {
+		// Blame/Credit Stephen Downes https://www.downes.ca/post/71841
+
+		$('#birdcage').html('<a href="https://twitter.com/intent/tweet?url=' + encodeURI(window.location.href) +'&text=' + encodeURIComponent(newmooc + ' Blame @cogdog for') + '" target="_blank"><img src="tweet.png" alt="Tweet"></a>');
+	}
+	
 
 	// generate the stuff
 	function generate() {
@@ -131,8 +136,10 @@
 					]
 
 	 // update the display
-  	  $('#metaphorical').html(heifers[random(heifers)]);
-
+	 
+	 var newmooc = heifers[random(heifers)];
+  	  $('#metaphorical').html(newmooc + '<br /><span id="birdcage"></span>');
+  	  tweet_for_stephen(newmooc);
 	}
 	
 	$(document).ready(function(){	
