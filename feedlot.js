@@ -81,7 +81,7 @@ let subject = [
 	'An Analytical Approach to',
 	'Compendium of',
 	'An Moralistic Study of ',
-	'Guidlines for',
+	'Guidelines for',
 	'The Fourth Law of Thermodynamics in the',
 	'A Critical approach to',
 	'A transvarient lens approach to ',
